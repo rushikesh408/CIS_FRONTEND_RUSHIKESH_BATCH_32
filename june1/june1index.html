@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    let env = ['dev']
+    let sending_amount=100
+
+  // env can be string number empty boolean object array
+
+    if(env=='dev'){
+        sending_amount = sending_amount+ (10% sending_amount)
+        console.log(sending_amount)
+
+    }
+
+    else if(env=='test'){
+        sending_amount = sending_amount+ (20% sending_amount)
+        console.log(sending_amount)
+    }
+
+    else if(env=='stage'){
+        sending_amount = sending_amount+ (30% sending_amount)
+        console.log(sending_amount)
+    }
+
+    else if (env=='prod')
+    {        sending_amount = sending_amount+ (5% sending_amount)
+        console.log(sending_amount)
+    }
+
+    else{
+        console.log("invalid")
+    }
+
+</script>
+
+<body>
+
+</body>
+</html>
