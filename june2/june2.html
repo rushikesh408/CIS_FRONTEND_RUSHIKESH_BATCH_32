@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+
+    let hobbies = ["cricket","Netflix","longdrives"]
+
+    function display(hobbies){
+
+        for (let i=0;i<=hobbies.length;i++){
+            console.log(hobbies[i])
+        }
+    }
+    display(hobbies)
+
+var name;
+  function addHobbies(name){
+        hobbies.push(name)
+    }
+
+    addHobbies("rushkesh")
+    display(hobbies)
+
+    addHobbies("prashanth")
+    display(hobbies)
+
+
+let value
+    function removeHobbies(value){
+        for (let i = 0; i < hobbies.length; i++) {
+            
+          if(hobbies[i]===value){
+            hobbies.slice(i,1)
+
+          }
+        }
+    }
+    console.log("after removing")
+
+    removeHobbies("rushkesh")
+    display(hobbies)
+
+
+
+</script>
+
+
+<body>
+    <div>
+        Hello
+    </div>
+</body>
+</html>
