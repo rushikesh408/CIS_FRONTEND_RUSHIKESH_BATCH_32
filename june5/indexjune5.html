@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<form id="firstform">
+    <div>
+        <label>First Name:</label>
+        <input type="text" id="fname" required>
+    </div>
+
+    <div>
+        <label>Last Name:</label>
+        <input type="text" id="lname" required>
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input type="email" id="email" required>
+    </div>
+
+    <div>
+        <label>Age:</label>
+        <input type="number" id="age" required>
+    </div>
+
+    <div>
+        <label>phonenum:</label>
+        <input type="number" id="phnum" required>
+    </div>
+
+
+
+
+    <button type="submit" onsubmit="displayElements()">Submit</button>
+
+
+</form>
+
+
+</div>
+
+<div id="display-fom">
+
+</div>
+</body>
+<script>
+
+   function displayElements(){
+       const fname = document.getElementById("fname").value
+       const lname = document.getElementById("lname").value
+       const phnum = document.getElementById("phnum").value
+       const email = document.getElementById("email").value
+       const age = document.getElementById("age").value
+
+
+       const displayForm = document.getElementById('display-fom');
+       displayForm.innerHTML=
+
+           `<p>${fname} ${lname} ${phnum} ${email} ${age} </p>`
+   }
+
+
+</script>
+
+</html>
