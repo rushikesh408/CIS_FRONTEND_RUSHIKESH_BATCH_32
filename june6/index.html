@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+</head>
+<body>
+<h1>My Profile</h1>
+<form id="profileForm">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" required><br><br>
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required><br><br>
+
+  <label for="gender">Gender:</label>
+  <input type="text" id="gender" name="gender" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required><br><br>
+
+  <label for="hobbies">Hobbies:</label><br>
+  <input type="checkbox" id="hobby1" name="hobbies" value="Reading">
+  <label for="hobby1">Reading</label><br>
+  <input type="checkbox" id="hobby2" name="hobbies" value="Sports">
+  <label for="hobby2">Sports</label><br>
+  <input type="checkbox" id="hobby3" name="hobbies" value="Music">
+  <label for="hobby3">Music</label><br><br>
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" required><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<h2>Submitted Profile Information:</h2>
+<div id="submittedData"></div>
+
+<script>
+  document.getElementById('profileForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var gender = document.getElementById('gender').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var hobbies = [];
+    var hobbyCheckboxes = document.getElementsByName('hobbies');
+    for (var i = 0; i < hobbyCheckboxes.length; i++) {
+      if (hobbyCheckboxes[i].checked) {
+        hobbies.push(hobbyCheckboxes[i].value);
+      }
+    }
+    var dob = document.getElementById('dob').value;
+
+    // Display submitted data
+    var submittedData = document.getElementById('submittedData');
+    submittedData.innerHTML = `
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Gender:</strong> ${gender}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone Number:</strong> ${phone}</p>
+        <p><strong>Hobbies:</strong> ${hobbies.join(', ')}</p>
+        <p><strong>Date of Birth:</strong> ${dob}</p>
+      `;
+  });
+</script>
+</body>
+</html>

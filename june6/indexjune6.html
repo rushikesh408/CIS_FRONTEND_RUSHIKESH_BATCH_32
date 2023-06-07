@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+  function showInput() {
+    document.getElementById('display').innerHTML = document.getElementById("user_input").value;
+
+    document.getElementById('display2').innerHTML = document.getElementById("user_input2").value;
+
+    document.getElementById('gender').innerHTML = getSelectedValue.value
+
+  }
+</script>
+<body>
+
+
+<form>
+  <label>Enter FirstName</label>
+  <input type="text"  id="user_input">
+
+  </br>
+
+
+  <label>Enter LastName</label>
+  <input type="text" id="user_input2">
+  </br>
+
+
+
+  <label>
+    Gender:
+  </label>  <br>
+  <input type="radio" id="gender" name="gender" value="male"/> Male
+  <br>
+  <input type="radio" id="gender" name="gender" value="female"/> Female <br/>
+
+  </br>
+
+
+
+</form>
+
+<input type="submit" onclick="showInput();"><br/>
+
+
+<p><span id='display'></span></p>
+<p><span id='display2'></span></p>
+<p><span id='genderdisplay'></span></p>
+
+</body>
+</html>
