@@ -35,30 +35,30 @@
   <input type="submit" value="Submit">
 </form>
 
-<h2>Submitted Profile Information:</h2>
+<h2>Profile Information:</h2>
 <div id="submittedData"></div>
 
 <script>
   document.getElementById('profileForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
-    // Get form values
-    var firstName = document.getElementById('firstName').value;
-    var lastName = document.getElementById('lastName').value;
-    var gender = document.getElementById('gender').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var hobbies = [];
-    var hobbyCheckboxes = document.getElementsByName('hobbies');
-    for (var i = 0; i < hobbyCheckboxes.length; i++) {
+
+    let firstName = document.getElementById('firstName').value;
+    let lastName = document.getElementById('lastName').value;
+    let gender = document.getElementById('gender').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let hobbies = [];
+    let hobbyCheckboxes = document.getElementsByName('hobbies');
+    for (let i = 0; i < hobbyCheckboxes.length; i++) {
       if (hobbyCheckboxes[i].checked) {
         hobbies.push(hobbyCheckboxes[i].value);
       }
     }
-    var dob = document.getElementById('dob').value;
+    let dob = document.getElementById('dob').value;
 
-    // Display submitted data
-    var submittedData = document.getElementById('submittedData');
+
+    let submittedData = document.getElementById('submittedData');
     submittedData.innerHTML = `
         <p><strong>First Name:</strong> ${firstName}</p>
         <p><strong>Last Name:</strong> ${lastName}</p>
